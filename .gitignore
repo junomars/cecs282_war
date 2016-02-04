@@ -1,3 +1,13 @@
+# Files not to be included in repo, though created by CLion
+/CMakeLists.txt
+.idea/.name
+.idea/encodings.xml
+.idea/modules.xml
+.idea/vcs.xml
+*.iml
+.idea/misc.xml
+.idea/workspace.xml
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
