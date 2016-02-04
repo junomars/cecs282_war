@@ -16,7 +16,7 @@ int main() {
     string play_again;
     int play_score;
     int comp_score;
-    // TODO: winforms?
+    // TODO: winforms
 
     do {
         // Present menu for input
