@@ -15,8 +15,6 @@ Deck::Deck() {
 }
 
 Card Deck::deal() {
-    // TODO: Maybe change this to control when a dealt card is displayed
-    display_card_at(--cards_dealt);
     return cards[cards_dealt];
 }
 
@@ -44,27 +42,12 @@ void Deck::shuffle() {
     }
 }
 
-void Deck::display_deck() {
-    for (int index = (int) cards.size() - 1; index > 0; index--)
-        cards[index].display_card();
-}
-
-void Deck::display_deck(int cards_left) {
-    for (int index = cards_left; index > 0; index--)
-        cards[index].display_card();
-}
-
-void Deck::display_card_at(int i) {
-    // TODO: Limit input to be in between array bounds
-    cards[i].display_card();
-}
-
 void Deck::reset_deck() {
     // Initialize our deck
     int card_count = 0;
 
-    // For each suit and each rank create a card
-    for (int suit_index = 0; suit_index < Card::get_suit_size(); suit_index++)
-        for (int rank_index = 0; rank_index < Card::get_rank_size(); rank_index++)
-            cards[card_count++].set_card(rank_index, suit_index);
+    // For each suit and each rank create a buffered_cards
+    for (int suit_index = 1; suit_index < 5; suit_index++)
+        for (int rank_index = 1; rank_index < 14; rank_index++)
+            cards[card_count++].set_card(static_cast<Rank>(rank_index), static_cast<Suit>(suit_index));
 }
