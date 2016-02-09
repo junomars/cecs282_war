@@ -5,16 +5,18 @@
 #ifndef PROJECT_001_DECK_H
 #define PROJECT_001_DECK_H
 
-#include <array>
+#include <vector>
 #include "Card.h"
 
 class Deck {
 private:
-    std::array<Card, 52> cards;
+    std::vector<Card> cards;
     int cards_dealt;
 protected:
 public:
     Deck();
+
+    int size() { return (int) cards.size(); }
 
     Card deal();
 
@@ -23,6 +25,8 @@ public:
     void shuffle();
 
     void reset_deck();
+
+    void add(Card card);
 };
 
 

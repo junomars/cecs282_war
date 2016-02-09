@@ -18,6 +18,7 @@
 class ConsoleDisplay : public DisplayInterface {
 private:
     std::vector<Card> cards;
+    std::array<std::wstring, 9> output;
 protected:
 public:
     ConsoleDisplay() { _setmode(_fileno(stdout), _O_U16TEXT); }
@@ -28,11 +29,13 @@ public:
 
     virtual bool cards_left(int cards_left);
 
-    virtual void buffer_card(Card card);
+    virtual void buffer(Card card);
+
+    virtual void buffer(Deck deck);
 
     virtual void buffered_cards();
 
-    std::array<std::wstring, 9> cards_to_str(std::vector<Card> print_cards);
+    void deck_to_str(Deck deck);
 
     virtual void display_message(std::wstring message);
 
