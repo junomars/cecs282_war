@@ -9,7 +9,7 @@
 
 class Card {
 private:
-    // This would have been nice as enum types for clarity?
+    // This would have been nice as enum types for clarity
     int rank;
     int suit;
 
