@@ -5,39 +5,34 @@
 #ifndef PROJECT_001_CARD_H
 #define PROJECT_001_CARD_H
 
+#include "Rank.h"
+#include "Suit.h"
 #include <string>
 
 class Card {
 private:
-    // This would have been nice as enum types for clarity
-    int rank;
-    int suit;
-
-    const std::string SUIT_STR[4] = {"Spades", "Hearts", "Clubs", "Diamonds"};
-    const std::string RANK_STR[13] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    Rank rank;
+    Suit suit;
 protected:
 public:
     Card();
 
-    Card(int rank, int suit);
+    Card(Rank rank, Suit suit);
 
     int get_value();
 
-    int get_rank();
+    Rank get_rank();
 
-    int get_suit();
+    Suit get_suit();
 
     // TODO: overload = operator?
     void set_card(Card card);
 
-    void set_card(int rank, int suit);
+    void set_card(Rank rank, Suit suit);
 
-    void display_card();
+    std::wstring get_suit_as_str();
 
-    // Note: sizeof returns size of the total memory size of array
-    static int get_rank_size() { return sizeof(RANK_STR) / sizeof(std::string); }
-
-    static int get_suit_size() { return sizeof(SUIT_STR) / sizeof(std::string); }
+    std::wstring get_rank_as_str();
 };
 
 #endif //PROJECT_001_CARD_H

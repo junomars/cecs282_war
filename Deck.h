@@ -22,12 +22,6 @@ public:
 
     void shuffle();
 
-    void display_deck();
-
-    void display_deck(int cards_left);
-
-    void display_card_at(int);
-
     void reset_deck();
 };
 
